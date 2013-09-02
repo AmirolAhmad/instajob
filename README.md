@@ -1,4 +1,4 @@
-instajob_devise
-===============
+instajob
+========
 
 Implementing and testing devise with Instajob
