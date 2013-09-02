@@ -1,6 +1,10 @@
 Instajob::Application.routes.draw do
   devise_for :members do get '/members/sign_out' => 'devise/sessions#destroy' end
   get "welcome/index"
+
+  resources :user
+  match "profile", to: "user#show", :via => 'get'
+  match "profile/edit", to: "user#edit", :via => 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
