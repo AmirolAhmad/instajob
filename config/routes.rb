@@ -1,4 +1,5 @@
 Instajob::Application.routes.draw do
+  devise_for :members do get '/members/sign_out' => 'devise/sessions#destroy' end
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
