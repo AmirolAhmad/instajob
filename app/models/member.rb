@@ -12,6 +12,8 @@ class Member < ActiveRecord::Base
 
   attr_accessible :login
 
+  validate :password_complexity
+
   def self.find_first_by_auth_conditions(warden_conditions)
 	conditions = warden_conditions.dup
 	if login = conditions.delete(:login)
@@ -25,8 +27,19 @@ class Member < ActiveRecord::Base
   validates :username,
             :presence => TRUE,
             :uniqueness => {
-            :case_sensitive => false
+              :case_sensitive => false
+            },
+            :length => {
+              :minimum => 8,
+              :maximum => 20
             }
+            
+  # password complexity          
+  def password_complexity
+    if password.present? and not password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+/)
+      errors.add :password, "must include at least one lowercase letter, one uppercase letter, and one digit"
+    end
+  end
 
   # add gravatar profile image
   include Gravtastic
