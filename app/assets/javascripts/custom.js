@@ -22,3 +22,13 @@ $(function () {
 $(function () {
 	$('[rel=to-top]').tooltip()
 });
+
+//tooltip for account setting
+$(function () {
+	$('[rel=acc-sett]').tooltip()
+});
+
+//tooltip for logout
+$(function () {
+	$('[rel=logout]').tooltip()
+});

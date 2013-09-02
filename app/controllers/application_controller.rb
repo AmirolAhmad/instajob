@@ -8,7 +8,19 @@ class ApplicationController < ActionController::Base
 	  session_path(resource_name)
 	end
 
+	#redirect user to profile page after sign in
 	def after_sign_in_path_for(resource)
 	  profile_path
 	end
+
+	# permit user to login with username or email
+	before_filter :configure_permitted_parameters, if: :devise_controller?
+
+    protected
+
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.for(:sign_up) do |u|
+        u.permit :username, :email, :password, :password_confirmation
+      end
+    end
 end
