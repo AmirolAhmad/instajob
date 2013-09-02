@@ -1,6 +1,8 @@
 Instajob - Social Career Network
 =========
 
+[![Build Status](https://travis-ci.org/Instajob/instajob.png?branch=master)](https://travis-ci.org/Instajob/instajob) [![Build Status](https://snap-ci.com/VPjro6wMOk3ly9CwmdNg5YsZWchXmmSS4If93uXVXKg/build_image)](https://snap-ci.com/projects/Instajob/instajob/build_history)
+
 ## Description
 
 InstaJob is a social career network where users can post and seek jobs be it for permanent, temporary, on-the-go or even for internship programs. Open to all companies and freelancers from all around the world.
