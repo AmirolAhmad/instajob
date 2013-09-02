@@ -72,6 +72,8 @@ gem 'newrelic_rpm', "~> 3.6.6.147"
 # for attr_accessible
 gem 'protected_attributes'
 
+gem 'capybara'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
