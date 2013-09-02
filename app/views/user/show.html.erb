@@ -1,3 +1,8 @@
+<style>
+.navbar-nav>li>a {
+  line-height: 36px;
+}
+</style>
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
     <div class="navbar-header">
@@ -9,11 +14,20 @@
         <%= link_to image_tag('logo.png'), root_path, :class => 'navbar-brand' %>
     </div>
     <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-btn pull-right">
-        <li><a href="#"><strong><small>ABOUT</small></strong></a></li>
-        <li><a href="#"><strong><small>PRICING</small></strong></a></li>
-        <li><a href="#"><strong><small>ENTERPRISE</small></strong></a></li>
-        <li><a href="#"><strong><small>APPLICATION</small></strong></a></li>
+      <ul class="nav navbar-nav pull-right">
+        <li>
+          <a href="#"><%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.username %></small></strong></a>
+        </li>
+        <li>
+          <%= link_to edit_member_registration_path, :rel => "acc-sett", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Account settings" do %>
+            <span class="glyphicon glyphicon-cog"></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_member_session_path, :rel => "logout", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Sign out" do %>
+            <span class="glyphicon glyphicon-log-out"></span>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
