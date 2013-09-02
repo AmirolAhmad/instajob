@@ -23,6 +23,7 @@ class Member < ActiveRecord::Base
 
   # validation for username
   validates :username,
+            :presence => TRUE,
             :uniqueness => {
             :case_sensitive => false
             }
