@@ -1,8 +1,6 @@
 Instajob - Social Career Network
 =========
 
-[![Build Status](https://snap-ci.com/o4W6ckcCesVo5YLTlcVpJdLMeKFM7VgePbVcRbkySW8/build_image)](https://snap-ci.com/projects/arvind-naidu/instajob_ruby/build_history)
-
 ## Description
 
 InstaJob is a social career network where users can post and seek jobs be it for permanent, temporary, on-the-go or even for internship programs. Open to all companies and freelancers from all around the world.
