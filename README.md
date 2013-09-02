@@ -1,7 +1,7 @@
 Instajob - Social Career Network
 =========
 
-[![Build Status](https://travis-ci.org/Instajob/instajob.png?branch=master)](https://travis-ci.org/Instajob/instajob) [![Build Status](https://snap-ci.com/VPjro6wMOk3ly9CwmdNg5YsZWchXmmSS4If93uXVXKg/build_image)](https://snap-ci.com/projects/Instajob/instajob/build_history)
+[![Build Status](https://snap-ci.com/VPjro6wMOk3ly9CwmdNg5YsZWchXmmSS4If93uXVXKg/build_image)](https://snap-ci.com/projects/Instajob/instajob/build_history) [![Build Status](https://travis-ci.org/Instajob/instajob.png?branch=master)](https://travis-ci.org/Instajob/instajob)
 
 ## Description
 
