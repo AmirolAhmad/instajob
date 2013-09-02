@@ -1,6 +1,7 @@
 require 'test_helper'
 require 'capybara/rails'
 
+class UserControllerTest < ActionController::TestCase
   test "should get show" do
   	get :show
   	assert_response :success
