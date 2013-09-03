@@ -1,8 +1,13 @@
 Instajob::Application.routes.draw do
-  devise_for :members 
   devise_scope :member do
-    get '/members/sign_out' => 'devise/sessions#destroy'
+    get '/logout' => 'devise/sessions#destroy'
+    get '/login', :to => 'devise/sessions#new'
+    get '/register', :to => 'devise/registrations#new'
+    get '/forgot_password', :to => 'devise/passwords#new'
+    get '/accounts/settings', :to => 'devise/registrations#edit'
   end
+  
+  devise_for :members, :controllers => { :recaptcha => "recaptcha" }
 
   get "welcome/index"
 
