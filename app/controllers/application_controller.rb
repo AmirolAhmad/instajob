@@ -21,11 +21,11 @@ class ApplicationController < ActionController::Base
 	# permit user to login with username or email
 	before_filter :configure_permitted_parameters, if: :devise_controller?
 
-    protected
+  protected
 
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.for(:sign_up) do |u|
-        u.permit :username, :email, :password, :password_confirmation
-      end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) do |u|
+      u.permit :username, :email, :password, :password_confirmation
     end
+  end
 end
