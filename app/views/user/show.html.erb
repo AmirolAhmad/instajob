@@ -19,12 +19,12 @@
           <a href="#"><%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.username %></small></strong></a>
         </li>
         <li>
-          <%= link_to edit_member_registration_path, :rel => "acc-sett", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Account settings" do %>
+          <%= link_to accounts_settings_path, :rel => "acc-sett", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Account settings" do %>
             <span class="glyphicon glyphicon-cog"></span>
           <% end %>
         </li>
         <li>
-          <%= link_to destroy_member_session_path, :rel => "logout", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Sign out" do %>
+          <%= link_to logout_path, :rel => "logout", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Sign out" do %>
             <span class="glyphicon glyphicon-log-out"></span>
           <% end %>
         </li>
