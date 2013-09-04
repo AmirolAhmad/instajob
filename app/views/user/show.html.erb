@@ -1,6 +1,73 @@
 <style>
+body {
+  padding-top: 75px;
+}
+
+#wrapper {
+  font-size: 85%;
+}
+
 .navbar-nav>li>a {
-  line-height: 36px;
+  line-height: 34px;
+  padding: 0 12px;
+}
+
+.navbar-btn>li>a {
+  line-height: 49px;
+  padding: 0 12px;
+}
+
+.search_form input[type=search] {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  width:200px;
+  min-height: 36px;
+  padding: 4px 20px 4px 8px;
+  font-size: 12px;
+  -moz-transition: all .2s linear;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+ 
+.search_form input[type=search]:focus {
+  width: 500px;
+  border-color: #51a7e8;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 0 5px rgba(81,167,232,0.5);
+  outline: none;
+}
+
+.featurette-divider {
+  margin: 20px 0; /* Space out the Bootstrap <hr> more */
+  border-top: 2px solid #fff;
+  border-top-color: #3498DB;
+}
+
+.media-object {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  margin-left: -10px;
+}
+
+.media-object {
+  width: 48px;
+  height: 48px;
+}
+
+.media-object img {
+}
+
+.list-group-item-heading {
+  margin-bottom: 5px;
+}
+
+.list-group-item-text {
+  margin-bottom: 1px;
+}
+
+.lead {
+  font-size: 16px;
 }
 </style>
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -13,10 +80,36 @@
       	</button>
         <%= link_to image_tag('logo.png'), root_path, :class => 'navbar-brand' %>
     </div>
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav pull-right">
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-btn">
         <li>
-          <a href="#"><%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.username %></small></strong></a>
+          <a href="#" rel="post-job" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Post a job"><span class="glyphicon glyphicon-briefcase"></span></a>
+        </li>
+        <li>
+          <a href="#" rel="notification" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Notifications"><span class="glyphicon glyphicon-envelope"></span> <span class="badge">2</span></a>
+        </li>
+      </ul>
+      <div class="search_form">
+        <form role="navbar-form">
+          <div class="form-group">
+            <div class="col-lg-6">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                <input type="search" class="form-control" placeholder="Search for job, company, category or user profile">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#"><%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.username.capitalize %></small></strong></a>
+        </li>
+        <li>
+          <a href="#" rel="dashboard" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Dashboard"><span class="glyphicon glyphicon-home"></span></a>
+        </li>
+        <li>
+          <a href="#" rel="subscription" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Subscriptions"><span class="glyphicon glyphicon-list-alt"></span></a>
         </li>
         <li>
           <%= link_to accounts_settings_path, :rel => "acc-sett", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Account settings" do %>
@@ -32,3 +125,188 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <!-- Sidebar left -->
+    <div class="col-xs-12 col-md-3">
+      <div id="wrapper">
+        <div class="list-group">
+          <p class="list-group-item lead active">
+            Job Listing
+            <button type="button" class="btn btn-default btn-xs pull-right" rel="view-all" data-container="body" data-placement="left" data-trigger="hover" data-toggle="tooltip" title="View all jobs"><span class="glyphicon glyphicon-list"></span></button>
+          </p>
+          <a href="#" class="list-group-item">
+            <img src="icons/Banner.png" class="media-object" alt="job1">
+            <h5 class="list-group-item-heading">Linux System Administrator</h5>
+            <p class="list-group-item-text"><strong>By:</strong> Apple, Inc</p>
+            <p class="list-group-item-text"><strong>Closing Date:</strong> Sept 11th, 2013</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <img src="icons/Graph.png" class="media-object" alt="job1">
+            <h5 class="list-group-item-heading">Graphic Designer</h5>
+            <p class="list-group-item-text"><strong>By:</strong> Facebook, Inc</p>
+            <p class="list-group-item-text"><strong>Closing Date:</strong> Oct 04th, 2013</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <img src="icons/Earth.png" class="media-object" alt="job1">
+            <h5 class="list-group-item-heading">Front-End Developer</h5>
+            <p class="list-group-item-text"><strong>By:</strong> Samsung Malaysia</p>
+            <p class="list-group-item-text"><strong>Closing Date:</strong> Oct 21th, 2013</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <img src="icons/Mail.png" class="media-object" alt="job1">
+            <h5 class="list-group-item-heading">Senior Account Manager</h5>
+            <p class="list-group-item-text"><strong>By:</strong> Malayan Bankin Berhad</p>
+            <p class="list-group-item-text"><strong>Closing Date:</strong> Nov 01th, 2013</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <img src="icons/Mountain.png" class="media-object" alt="job1">
+            <h5 class="list-group-item-heading">PHP Developer</h5>
+            <p class="list-group-item-text"><strong>By:</strong> Media Prima Berhad</p>
+            <p class="list-group-item-text"><strong>Closing Date:</strong> Nov 13th, 2013</p>
+          </a>
+        </div>
+      </div>
+      <div id="wrapper">
+        <div class="list-group">
+          <p class="list-group-item lead active">
+            Job Featured
+            <button type="button" class="btn btn-default btn-xs pull-right" rel="verify" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Verified"><span class="glyphicon glyphicon-list"></span></button>
+          </p>
+          <a href="#" class="list-group-item">
+            <img src="icons/Banner.png" class="media-object" alt="job1">
+            <h5 class="list-group-item-heading">Linux System Administrator</h5>
+            <p class="list-group-item-text"><strong>By:</strong> Apple, Inc</p>
+            <p class="list-group-item-text"><strong>Closing Date:</strong> Sept 11th, 2013</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <img src="icons/Graph.png" class="media-object" alt="job1">
+            <h5 class="list-group-item-heading">Graphic Designer</h5>
+            <p class="list-group-item-text"><strong>By:</strong> Facebook, Inc</p>
+            <p class="list-group-item-text"><strong>Closing Date:</strong> Oct 04th, 2013</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <img src="icons/Earth.png" class="media-object" alt="job1">
+            <h5 class="list-group-item-heading">Front-End Developer</h5>
+            <p class="list-group-item-text"><strong>By:</strong> Samsung Malaysia</p>
+            <p class="list-group-item-text"><strong>Closing Date:</strong> Oct 21th, 2013</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <img src="icons/Mail.png" class="media-object" alt="job1">
+            <h5 class="list-group-item-heading">Senior Account Manager</h5>
+            <p class="list-group-item-text"><strong>By:</strong> Malayan Bankin Berhad</p>
+            <p class="list-group-item-text"><strong>Closing Date:</strong> Nov 01th, 2013</p>
+          </a>
+          <a href="#" class="list-group-item">
+            <img src="icons/Mountain.png" class="media-object" alt="job1">
+            <h5 class="list-group-item-heading">PHP Developer</h5>
+            <p class="list-group-item-text"><strong>By:</strong> Media Prima Berhad</p>
+            <p class="list-group-item-text"><strong>Closing Date:</strong> Nov 13th, 2013</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Middle profile -->
+    <div class="col-xs-12 col-md-6">
+      <div class="row">
+        <div class="col-md-4">
+          <%= image_tag @current_member.gravatar_url(:size => 180), :class => 'img-thumbnail' %>
+        </div>
+        <div class="col-md-8">
+          <h2>Amirol Ahmad <button type="button" class="btn btn-primary btn-xs" rel="verify" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Verified"><span class="glyphicon glyphicon-ok"></span></button>
+            <div class="btn-group">
+              <button type="button" class="btn btn-danger btn-xs" data-toggle="button" rel="star-user" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Star this user">
+                <span class="glyphicon glyphicon-star"></span> Star
+              </button>
+              <button type="button" class="btn btn-default btn-xs" disabled="disabled">
+                <strong>1,427</strong>
+              </button>
+            </div>
+          </h2>
+          <h4>Lead Developer at Osem Network Ent</h4>
+          <h5>Petaling Jaya, Selangor MALAYSIA</h5>
+          <div class="btn-group">
+            <button type="button" rel="acc-type" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="View more details" class="btn btn-info btn-xs">
+              Account Type
+            </button>
+            <button type="button" class="btn btn-default btn-xs" disabled="disabled">
+              <strong>Premium</strong>
+            </button>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-info btn-xs">
+              Status
+            </button>
+            <button type="button" class="btn btn-default btn-xs" disabled="disabled">
+              <strong>Employed</strong>
+            </button>
+          </div>
+        </div>
+      </div>
+      <form role="form">
+        <div class="form-group">
+          <label>Profile Description</label>
+          <p class="form-control-static">
+            <small>Born on July 4th, 1986. Very talented person in technology industry. Expertized in computer fields such as networking (server environment), programing (PHP, Ruby, Python etc), web and mobile application includiong ios and android.</small>
+          </p>
+          <p class="form-control-static">
+            <small>Other duties may include scripting or light programming, project management for systems-related projects, supervising or training computer operators, and being the consultant for computer problems beyond the knowledge of technical support staff in our company.</small>
+          </p>
+        </div>
+      </form>
+
+      <hr class="featurette-divider">
+
+      <p class="lead">Background <button type="button" class="btn btn-primary btn-xs" rel="edit" data-container="body" data-placement="right" data-trigger="hover" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></button></p>
+     
+      <div class="row">
+        <div class="col-md-6">
+          <form role="form">
+            <div class="form-group">
+              <label><span class="glyphicon glyphicon-user"></span> Full Name</label>
+              <p class="form-control-static"><small>Mohd Amirol Bin Ahmad</small></p>
+            </div>
+            <div class="form-group">
+              <label><span class="glyphicon glyphicon-calendar"></span> Date of Birth</label>
+              <p class="form-control-static"><small>July 4th, 1986</small></p>
+            </div>
+            <div class="form-group">
+              <label><span class="glyphicon glyphicon-eye-open"></span> Lives In</label>
+              <p class="form-control-static"><small>Petaling Jaya, Selangor</small></p>
+            </div>
+            <div class="form-group">
+              <label><span class="glyphicon glyphicon-globe"></span> Nationality</label>
+              <p class="form-control-static"><small>Malaysia</small></p>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <form role="form">
+            <div class="form-group">
+              <label><span class="glyphicon glyphicon-envelope"></span> Email Address</label>
+              <p class="form-control-static"><small>email@address.com</small></p>
+            </div>
+            <div class="form-group">
+              <label><span class="glyphicon glyphicon-earphone"></span> Contact Number</label>
+              <p class="form-control-static"><small>+60.19515**** </small><button type="button" class="btn btn-warning btn-xs">Click to show</button></p>
+            </div>
+            <div class="form-group">
+              <label><span class="glyphicon glyphicon-bell"></span> Marriage Status</label>
+              <p class="form-control-static"><small>Married</small></p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <p class="lead">Skills <button type="button" class="btn btn-primary btn-xs" rel="edit" data-container="body" data-placement="right" data-trigger="hover" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></button></p>
+
+    </div>
+    <!-- Sidebar right -->
+    <div class="col-xs-12 col-md-3">
+      <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+    </div>
+  </div>
+</div>
+
