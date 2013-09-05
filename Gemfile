@@ -61,7 +61,7 @@ group :doc do
 end
 
 # https://rubygems.org/gems/font-awesome-rails
-gem "font-awesome-rails", "~> 3.2.1.3"
+gem "font-awesome-rails"
 
 # rspec (https://rubygems.org/gems/rspec)
 gem "rspec", "~> 2.14.1"
