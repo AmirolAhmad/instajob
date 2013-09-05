@@ -25,7 +25,17 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit :username, :email, :password, :password_confirmation
+      u.permit :first_name, :last_name, :username, :email, :password, :password_confirmation
+    end
+  end
+
+  protected
+
+  def devise_parameter_sanitizer
+    if resource_class == Member
+      Member::ParameterSanitizer.new(Member, :member, params)
+    else
+      super
     end
   end
 end
