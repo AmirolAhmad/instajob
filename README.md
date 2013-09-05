@@ -7,10 +7,10 @@ Instajob - Social Career Network
 
 InstaJob is a social career network where users can post and seek jobs be it for permanent, temporary, on-the-go or even for internship programs. Open to all companies and freelancers from all around the world.
 
-Building Instajob with Ruby on Rails & Bootstrap v3
+Building Instajob with Ruby on Rails 4.0 & Bootstrap v3
 
 ## Website Development
-+ [https://instajob.herokuapp.com/](https://instajob.herokuapp.com/)
++ [http://instajob.io/](http://instajob.io/)
 
 ## Authors
 
