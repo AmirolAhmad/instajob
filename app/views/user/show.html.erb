@@ -4,7 +4,7 @@ body {
 }
 
 #wrapper {
-  font-size: 85%;
+  font-size: 90%;
 }
 
 .navbar-nav>li>a {
@@ -69,6 +69,10 @@ body {
 .lead {
   font-size: 16px;
 }
+
+.numbering {
+  margin-left: 10px;
+}
 </style>
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
@@ -86,7 +90,7 @@ body {
           <a href="#" rel="post-job" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Post a job"><span class="glyphicon glyphicon-briefcase"></span></a>
         </li>
         <li>
-          <a href="#" rel="notification" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Notifications"><span class="glyphicon glyphicon-envelope"></span> <span class="badge">2</span></a>
+          <a href="#" rel="notification" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Notifications"><span class="glyphicon glyphicon-envelope"></span> <span class="label label-danger">2</span></a>
         </li>
       </ul>
       <div class="search_form">
@@ -130,41 +134,43 @@ body {
     <!-- Sidebar left -->
     <div class="col-xs-12 col-md-3">
       <div id="wrapper">
-        <div class="list-group">
-          <p class="list-group-item lead active">
-            Job Listing
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <strong>JOB APPLIED</strong>
             <button type="button" class="btn btn-default btn-xs pull-right" rel="view-all" data-container="body" data-placement="left" data-trigger="hover" data-toggle="tooltip" title="View all jobs"><span class="glyphicon glyphicon-list"></span></button>
-          </p>
-          <a href="#" class="list-group-item">
-            <img src="icons/Banner.png" class="media-object" alt="job1">
-            <h5 class="list-group-item-heading">Linux System Administrator</h5>
-            <p class="list-group-item-text"><strong>By:</strong> Apple, Inc</p>
-            <p class="list-group-item-text"><strong>Closing Date:</strong> Sept 11th, 2013</p>
-          </a>
-          <a href="#" class="list-group-item">
-            <img src="icons/Graph.png" class="media-object" alt="job1">
-            <h5 class="list-group-item-heading">Graphic Designer</h5>
-            <p class="list-group-item-text"><strong>By:</strong> Facebook, Inc</p>
-            <p class="list-group-item-text"><strong>Closing Date:</strong> Oct 04th, 2013</p>
-          </a>
-          <a href="#" class="list-group-item">
-            <img src="icons/Earth.png" class="media-object" alt="job1">
-            <h5 class="list-group-item-heading">Front-End Developer</h5>
-            <p class="list-group-item-text"><strong>By:</strong> Samsung Malaysia</p>
-            <p class="list-group-item-text"><strong>Closing Date:</strong> Oct 21th, 2013</p>
-          </a>
-          <a href="#" class="list-group-item">
-            <img src="icons/Mail.png" class="media-object" alt="job1">
-            <h5 class="list-group-item-heading">Senior Account Manager</h5>
-            <p class="list-group-item-text"><strong>By:</strong> Malayan Bankin Berhad</p>
-            <p class="list-group-item-text"><strong>Closing Date:</strong> Nov 01th, 2013</p>
-          </a>
-          <a href="#" class="list-group-item">
-            <img src="icons/Mountain.png" class="media-object" alt="job1">
-            <h5 class="list-group-item-heading">PHP Developer</h5>
-            <p class="list-group-item-text"><strong>By:</strong> Media Prima Berhad</p>
-            <p class="list-group-item-text"><strong>Closing Date:</strong> Nov 13th, 2013</p>
-          </a>
+          </div>
+          <ol class="list-group">
+            <a href="#" class="list-group-item">
+              <li class="numbering">
+                Linux SysAdmin
+                <span class="label label-warning pull-right">Pending Review</span>
+              </li>
+            </a>
+            <a href="#" class="list-group-item">
+              <li class="numbering">
+                Project Manager
+                <span class="label label-info pull-right">Application Received</span>
+              </li>
+            </a>
+            <a href="#" class="list-group-item">
+              <li class="numbering">
+                PHP Developer
+                <span class="label label-primary pull-right">Schedule for Interview</span>
+              </li>
+            </a>
+            <a href="#" class="list-group-item">
+              <li class="numbering">
+                Graphic Designer
+                <span class="label label-danger pull-right">Application Reject</span>
+              </li>
+            </a>
+            <a href="#" class="list-group-item">
+              <li class="numbering">
+                Front-End Developer
+                <span class="label label-success pull-right">Success</span>
+              </li>
+            </a>
+          </ol>
         </div>
       </div>
       <div id="wrapper">
@@ -207,12 +213,12 @@ body {
       </div>
     </div>
     <!-- Middle profile -->
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-12 col-md-9">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <%= image_tag @current_member.gravatar_url(:size => 180), :class => 'img-thumbnail' %>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
           <h2>Amirol Ahmad <button type="button" class="btn btn-primary btn-xs" rel="verify" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Verified"><span class="glyphicon glyphicon-ok"></span></button>
             <div class="btn-group">
               <button type="button" class="btn btn-danger btn-xs" data-toggle="button" rel="star-user" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Star this user">
@@ -224,7 +230,8 @@ body {
             </div>
           </h2>
           <h4>Lead Developer at Osem Network Ent</h4>
-          <h5>Petaling Jaya, Selangor MALAYSIA</h5>
+          <h5>Petaling Jaya, Selangor</h5>
+          <h5>MALAYSIA</h5>
           <div class="btn-group">
             <button type="button" rel="acc-type" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="View more details" class="btn btn-info btn-xs">
               Account Type
@@ -304,9 +311,11 @@ body {
 
     </div>
     <!-- Sidebar right -->
+    <!-- If needed
     <div class="col-xs-12 col-md-3">
       <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
     </div>
+    -->
   </div>
 </div>
 
