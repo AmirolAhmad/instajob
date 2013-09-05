@@ -107,7 +107,7 @@ body {
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="#"><%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.username.capitalize %></small></strong></a>
+          <a href="#"><%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.first_name %> <%= current_member.last_name %></small></strong></a>
         </li>
         <li>
           <a href="#" rel="dashboard" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Dashboard"><span class="glyphicon glyphicon-home"></span></a>
@@ -221,7 +221,7 @@ body {
           <%= image_tag @current_member.gravatar_url(:size => 180), :class => 'img-thumbnail' %>
         </div>
         <div class="col-md-9">
-          <h2>Amirol Ahmad <button type="button" class="btn btn-primary btn-xs" rel="verify" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Verified"><span class="glyphicon glyphicon-ok"></span></button>
+          <h2><%= current_member.first_name %> <%= current_member.first_name %> <button type="button" class="btn btn-primary btn-xs" rel="verify" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Verified"><span class="glyphicon glyphicon-ok"></span></button>
             <div class="btn-group">
               <button type="button" class="btn btn-danger btn-xs" data-toggle="button" rel="star-user" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Star this user">
                 <span class="glyphicon glyphicon-star"></span> Star
@@ -298,7 +298,7 @@ body {
           <form role="form">
             <div class="form-group">
               <label><span class="glyphicon glyphicon-envelope"></span> Email Address</label>
-              <p class="form-control-static"><small>email@address.com</small></p>
+              <p class="form-control-static"><small><%= current_member.email %></small></p>
             </div>
             <div class="form-group">
               <label><span class="glyphicon glyphicon-earphone"></span> Contact Number</label>

@@ -6,7 +6,7 @@ class Member < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
 
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :first_name, :last_name, :username, :email, :password, :password_confirmation, :remember_me
 
   attr_accessor :login
 
