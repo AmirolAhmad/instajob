@@ -107,7 +107,7 @@ body {
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="#"><%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.first_name %> <%= current_member.last_name %></small></strong></a>
+          <a href="#"><%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.first_name %></small></strong></a>
         </li>
         <li>
           <a href="#" rel="dashboard" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Dashboard"><span class="glyphicon glyphicon-home"></span></a>
@@ -278,7 +278,7 @@ body {
           <form role="form">
             <div class="form-group">
               <label><span class="glyphicon glyphicon-user"></span> Full Name</label>
-              <p class="form-control-static"><small>Mohd Amirol Bin Ahmad</small></p>
+              <p class="form-control-static"><small><%= current_member.first_name %> <%= current_member.last_name %></small></p>
             </div>
             <div class="form-group">
               <label><span class="glyphicon glyphicon-calendar"></span> Date of Birth</label>
