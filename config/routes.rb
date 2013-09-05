@@ -6,8 +6,6 @@ Instajob::Application.routes.draw do
     get '/forgot_password', :to => 'devise/passwords#new'
     get '/accounts/settings', :to => 'devise/registrations#edit'
   end
-  
-  devise_for :members, :controllers => { :recaptcha => "recaptcha" }
 
   get "welcome/index"
 

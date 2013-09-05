@@ -13,8 +13,6 @@ end
 # Better Errors' advanced features
 gem "binding_of_caller"
 
-gem 'recaptcha'
-
 #The super fantastic way of getting Gravatars (https://github.com/chrislloyd/gravtastic)
 gem 'gravtastic'
 
