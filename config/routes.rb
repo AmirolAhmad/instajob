@@ -1,4 +1,5 @@
 Instajob::Application.routes.draw do
+  devise_for :members
   devise_scope :member do
     get '/logout' => 'devise/sessions#destroy'
     get '/login', :to => 'devise/sessions#new'
