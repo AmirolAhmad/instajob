@@ -20,7 +20,7 @@ module DeviseHelper
     html = <<-HTML
     <div class="alert alert-danger">
       <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
-      <h5>#{sentence}</h5>
+      <!--<h5>#{sentence}</h5>-->
       <ul>#{messages}</ul>
     </div>
     HTML

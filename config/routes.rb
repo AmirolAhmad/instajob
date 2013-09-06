@@ -1,18 +1,30 @@
 Instajob::Application.routes.draw do
-  devise_for :members
+  devise_for :members,
+    :controllers => {
+      :registrations => "registrations"
+    },
+    :path_names => {
+      :sign_in => 'login',
+      :sign_out => 'logout',
+      :password => 'secret',
+      :confirmation => 'verification',
+      registration: 'register'
+    }
+
   devise_scope :member do
     get '/logout' => 'devise/sessions#destroy'
     get '/login', :to => 'devise/sessions#new'
     get '/register', :to => 'devise/registrations#new'
     get '/forgot_password', :to => 'devise/passwords#new'
-    get '/accounts/settings', :to => 'devise/registrations#edit'
+    get '/settings/profile', :to => 'devise/registrations#edit'
   end
 
   get "welcome/index"
 
   resources :user
   match "profile", to: "user#show", :via => 'get'
-  match "profile/edit", to: "user#edit", :via => 'get'
+  match "settings", to: "user#edit", :via => 'get'
+  match "settings/credential", to: "user#credential", :via => 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

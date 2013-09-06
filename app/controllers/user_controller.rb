@@ -11,9 +11,18 @@ class UserController < ApplicationController
 
   def edit
   	if member_signed_in?
-  		user_edit_path
+  		settings_profile_path
   	elsif 
   		session_path(resource_name)
   	end
   end
+
+  def credential
+    if member_signed_in?
+      settings_credential_path
+    elsif 
+      session_path(resource_name)
+    end
+  end
+
 end
