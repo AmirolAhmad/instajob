@@ -183,7 +183,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   json
-  newrelic_rpm (~> 3.6.6.147)
+  newrelic_rpm
   nprogress-rails (~> 0.1.2.2)
   pg
   protected_attributes
