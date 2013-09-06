@@ -1,38 +1,242 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<style>
+body {
+  padding-top: 75px;
+}
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+#wrapper {
+  font-size: 90%;
+}
 
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username, :autofocus => true %></div>
+.navbar-nav>li>a {
+  line-height: 34px;
+  padding: 0 12px;
+}
 
-  <div><%= f.label :first_name %><br />
-  <%= f.text_field :first_name %></div>
+.navbar-btn>li>a {
+  line-height: 49px;
+  padding: 0 12px;
+}
 
-  <div><%= f.label :last_name %><br />
-  <%= f.text_field :last_name %></div>
+.search_form input[type=search] {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  width:200px;
+  min-height: 36px;
+  padding: 4px 20px 4px 8px;
+  font-size: 12px;
+  -moz-transition: all .2s linear;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+ 
+.search_form input[type=search]:focus {
+  width: 500px;
+  border-color: #51a7e8;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 0 5px rgba(81,167,232,0.5);
+  outline: none;
+}
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+.featurette-divider {
+  margin: 20px 0; /* Space out the Bootstrap <hr> more */
+  border-top: 2px solid #fff;
+  border-top-color: #3498DB;
+}
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+.media-object {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  margin-left: -10px;
+}
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+.media-object {
+  width: 48px;
+  height: 48px;
+}
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+.media-object img {
+}
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
+.list-group-item-heading {
+  margin-bottom: 5px;
+}
 
-  <div><%= f.submit "Update" %></div>
-<% end %>
+.list-group-item-text {
+  margin-bottom: 1px;
+}
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
-
-<%= link_to "Back", :back %>
+.lead {
+  font-size: 16px;
+}
+</style>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to image_tag('logo.png'), root_path, :class => 'navbar-brand' %>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-btn">
+        <li>
+          <%= link_to "", :rel => "post-job", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Post a job" do %>
+            <span class="glyphicon glyphicon-briefcase"></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "", :rel => "notification", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Notifications" do %>
+            <span class="glyphicon glyphicon-envelope"></span> <span class="label label-danger">2</span>
+          <% end %>
+        </li>
+      </ul>
+      <div class="search_form">
+        <form role="navbar-form">
+          <div class="form-group">
+            <div class="col-lg-6">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                <input type="search" class="form-control" placeholder="Search for job, company, category or user profile">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to :back do %>
+          <%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.first_name %></small></strong>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "", :rel => "dashboard", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Dashboard" do %>
+            <span class="glyphicon glyphicon-home"></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "", :rel => "subscription", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Subscriptions" do %>
+            <span class="glyphicon glyphicon-list-alt"></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to accounts_settings_path, :rel => "acc-sett", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Account settings" do %>
+            <span class="glyphicon glyphicon-cog"></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to logout_path, :rel => "logout", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Sign out" do %>
+            <span class="glyphicon glyphicon-log-out"></span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <!-- Sidebar left -->
+    <div class="col-xs-12 col-md-3">
+      <div id="wrapper">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= image_tag @current_member.gravatar_url(:size => 22), :class => 'img-rounded' %>
+            <strong><%= current_member.username %></strong>
+          </div>
+          <ul class="list-group">
+            <%= link_to "", :class => "active list-group-item" do %>
+              Profile Details
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
+              User Credential
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
+              Company Details
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
+              Skill & Expertise
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
+              My Past Project
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
+              Payment & Billing
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
+              Notification Center
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Middle profile -->
+    <div class="col-xs-12 col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Profile Detail</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-6">
+            <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+              <%= devise_error_messages! %>
+              <div class="form-group">
+                <%= f.label :username %>
+                <%= f.text_field :username, :class => 'form-control', :type => 'text' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :first_name %>
+                <%= f.text_field :first_name, :class => 'form-control', :type => 'text' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :last_name %>
+                <%= f.text_field :last_name, :class => 'form-control', :type => 'text' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :email %>
+                <%= f.email_field :email, :class => 'form-control', :type => 'email' %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <span class="help-block">Currently waiting confirmation for: <%= resource.unconfirmed_email %></span>
+                <% end %>
+              </div>
+              <div class="form-group">
+                <%= f.label :password %>
+                <%= f.password_field :password, :autocomplete => "off", :class => 'form-control', :type => 'password' %>
+                <span class="help-block">Leave blank if you don't want to change it</span>
+              </div>
+              <div class="form-group">
+                <%= f.label :password_confirmation %>
+                <%= f.password_field :password_confirmation, :class => 'form-control', :type => 'password' %>
+              </div>
+              <div class="form-group">
+                <%= f.label :current_password %>
+                <%= f.password_field :current_password, :class => 'form-control', :type => 'password' %>
+                <span class="help-block">We need your current password to confirm your changes</span>
+              </div>
+              <div class="form-group">
+                <%= f.submit "Update Details", :class => 'btn btn-primary btn-default' %>
+              </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h3 class="panel-title">Delete Account</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <strong>Are you sure you want to delete your account?</strong>
+              <p>Deleting your account will disable your profile and remove your name and picture from most things you've shared on Instajob.</p>
+              <%= button_to "Delete my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-danger btn-sm' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
