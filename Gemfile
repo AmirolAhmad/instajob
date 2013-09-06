@@ -67,7 +67,7 @@ gem "font-awesome-rails"
 gem "rspec", "~> 2.14.1"
 
 # New Relic for deployment
-gem 'newrelic_rpm', "~> 3.6.6.147"
+gem 'newrelic_rpm'
 
 # for attr_accessible
 gem 'protected_attributes'

@@ -87,10 +87,14 @@ body {
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-btn">
         <li>
-          <a href="#" rel="post-job" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Post a job"><span class="glyphicon glyphicon-briefcase"></span></a>
+          <%= link_to "", :rel => "post-job", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Post a job" do %>
+            <span class="glyphicon glyphicon-briefcase"></span>
+          <% end %>
         </li>
         <li>
-          <a href="#" rel="notification" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Notifications"><span class="glyphicon glyphicon-envelope"></span> <span class="label label-danger">2</span></a>
+          <%= link_to "", :rel => "notification", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Notifications" do %>
+            <span class="glyphicon glyphicon-envelope"></span> <span class="label label-danger">2</span>
+          <% end %>
         </li>
       </ul>
       <div class="search_form">
@@ -110,10 +114,14 @@ body {
           <a href="#"><%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.first_name %></small></strong></a>
         </li>
         <li>
-          <a href="#" rel="dashboard" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Dashboard"><span class="glyphicon glyphicon-home"></span></a>
+          <%= link_to "", :rel => "dashboard", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Dashboard" do %>
+            <span class="glyphicon glyphicon-home"></span>
+          <% end %>
         </li>
         <li>
-          <a href="#" rel="subscription" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Subscriptions"><span class="glyphicon glyphicon-list-alt"></span></a>
+          <%= link_to "", :rel => "subscription", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Subscriptions" do %>
+            <span class="glyphicon glyphicon-list-alt"></span>
+          <% end %>
         </li>
         <li>
           <%= link_to accounts_settings_path, :rel => "acc-sett", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Account settings" do %>
@@ -137,39 +145,41 @@ body {
         <div class="panel panel-default">
           <div class="panel-heading">
             <strong>JOB APPLIED</strong>
-            <button type="button" class="btn btn-default btn-xs pull-right" rel="view-all" data-container="body" data-placement="left" data-trigger="hover" data-toggle="tooltip" title="View all jobs"><span class="glyphicon glyphicon-list"></span></button>
+            <%= link_to "", :class => "btn btn-default btn-xs pull-right", :rel => "view-all", :'data-container' => 'body', :'data-placement' => "left", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "View all job" do %>
+              <span class="glyphicon glyphicon-list"></span>
+            <% end %>
           </div>
           <ol class="list-group">
-            <a href="#" class="list-group-item">
+            <%= link_to "", :class => "list-group-item" do %>
               <li class="numbering">
                 Linux SysAdmin
                 <span class="label label-warning pull-right">Pending Review</span>
               </li>
-            </a>
-            <a href="#" class="list-group-item">
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
               <li class="numbering">
                 Project Manager
                 <span class="label label-info pull-right">Application Received</span>
               </li>
-            </a>
-            <a href="#" class="list-group-item">
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
               <li class="numbering">
                 PHP Developer
                 <span class="label label-primary pull-right">Schedule for Interview</span>
               </li>
-            </a>
-            <a href="#" class="list-group-item">
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
               <li class="numbering">
                 Graphic Designer
                 <span class="label label-danger pull-right">Application Reject</span>
               </li>
-            </a>
-            <a href="#" class="list-group-item">
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
               <li class="numbering">
                 Front-End Developer
                 <span class="label label-success pull-right">Success</span>
               </li>
-            </a>
+            <% end %>
           </ol>
         </div>
       </div>
@@ -177,39 +187,41 @@ body {
         <div class="panel panel-default">
           <div class="panel-heading">
             <strong>JOB FEATURED</strong>
-            <button type="button" class="btn btn-default btn-xs pull-right" rel="view-all" data-container="body" data-placement="left" data-trigger="hover" data-toggle="tooltip" title="View all jobs"><span class="glyphicon glyphicon-list"></span></button>
+            <%= link_to "", :class => "btn btn-default btn-xs pull-right", :rel => "view-all", :'data-container' => 'body', :'data-placement' => "left", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "View all job" do %>
+              <span class="glyphicon glyphicon-list"></span>
+            <% end %>
           </div>
           <ol class="list-group">
-            <a href="#" class="list-group-item">
-              <img src="icons/Banner.png" class="media-object" alt="job1">
+            <%= link_to "", :class => "list-group-item" do %>
+              <%= image_tag "/icons/Banner.png", :class => "media-object", :alt => "job1" %>
               <h5 class="list-group-item-heading">Linux System Administrator</h5>
               <p class="list-group-item-text"><strong>By:</strong> Apple, Inc</p>
               <p class="list-group-item-text"><strong>Closing Date:</strong> Sept 11th, 2013</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <img src="icons/Graph.png" class="media-object" alt="job1">
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
+              <%= image_tag "/icons/Graph.png", :class => "media-object", :alt => "job2" %>
               <h5 class="list-group-item-heading">Graphic Designer</h5>
               <p class="list-group-item-text"><strong>By:</strong> Facebook, Inc</p>
               <p class="list-group-item-text"><strong>Closing Date:</strong> Oct 04th, 2013</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <img src="icons/Earth.png" class="media-object" alt="job1">
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
+              <%= image_tag "/icons/Earth.png", :class => "media-object", :alt => "job3" %>
               <h5 class="list-group-item-heading">Front-End Developer</h5>
               <p class="list-group-item-text"><strong>By:</strong> Samsung Malaysia</p>
               <p class="list-group-item-text"><strong>Closing Date:</strong> Oct 21th, 2013</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <img src="icons/Mail.png" class="media-object" alt="job1">
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
+              <%= image_tag "/icons/Mail.png", :class => "media-object", :alt => "job4" %>
               <h5 class="list-group-item-heading">Senior Account Manager</h5>
               <p class="list-group-item-text"><strong>By:</strong> Malayan Bankin Berhad</p>
               <p class="list-group-item-text"><strong>Closing Date:</strong> Nov 01th, 2013</p>
-            </a>
-            <a href="#" class="list-group-item">
-              <img src="icons/Mountain.png" class="media-object" alt="job1">
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
+              <%= image_tag "/icons/Mountain.png", :class => "media-object", :alt => "job5" %>
               <h5 class="list-group-item-heading">PHP Developer</h5>
               <p class="list-group-item-text"><strong>By:</strong> Media Prima Berhad</p>
               <p class="list-group-item-text"><strong>Closing Date:</strong> Nov 13th, 2013</p>
-            </a>
+            <% end %>
           </ol>
         </div>
       </div>
@@ -221,34 +233,38 @@ body {
           <%= image_tag @current_member.gravatar_url(:size => 180), :class => 'img-thumbnail' %>
         </div>
         <div class="col-md-9">
-          <h2><%= current_member.first_name %> <%= current_member.last_name %> <button type="button" class="btn btn-primary btn-xs" rel="verify" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Verified"><span class="glyphicon glyphicon-ok"></span></button>
+          <h2>
+            <%= current_member.first_name %> <%= current_member.last_name %>
+            <%= link_to "", :class => "btn btn-primary btn-xs", :rel => "verify", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Verified" do %>
+            <span class="glyphicon glyphicon-ok"></span>
+            <% end %>
             <div class="btn-group">
-              <button type="button" class="btn btn-danger btn-xs" data-toggle="button" rel="star-user" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="Star this user">
-                <span class="glyphicon glyphicon-star"></span> Star
-              </button>
-              <button type="button" class="btn btn-default btn-xs" disabled="disabled">
+              <%= link_to "", :class => "btn btn-danger btn-xs", :'data-toggle' => "button", :rel => "star-user", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Star this user" do %>
+              <span class="glyphicon glyphicon-star"></span> Star
+              <% end %>
+              <%= link_to "", :class => "btn btn-default btn-xs", :disabled => "disabled" do %>
                 <strong>1,427</strong>
-              </button>
+              <% end %>
             </div>
           </h2>
           <h4>Lead Developer at Osem Network Ent</h4>
           <h5>Petaling Jaya, Selangor</h5>
           <h5>MALAYSIA</h5>
           <div class="btn-group">
-            <button type="button" rel="acc-type" data-container="body" data-placement="bottom" data-trigger="hover" data-toggle="tooltip" title="View more details" class="btn btn-info btn-xs">
+            <%= link_to "", :class => "btn btn-info btn-xs", :rel => "acc-type", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "View more details" do %>
               Account Type
-            </button>
-            <button type="button" class="btn btn-default btn-xs" disabled="disabled">
+            <% end %>
+            <%= link_to "", :class => "btn btn-default btn-xs", :rel => "acc-type", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "View more details", :disabled => "disabled" do %>
               <strong>Premium</strong>
-            </button>
+            <% end %>
           </div>
           <div class="btn-group">
-            <button type="button" class="btn btn-info btn-xs">
+            <%= link_to "", :class => "btn btn-info btn-xs" do %>
               Status
-            </button>
-            <button type="button" class="btn btn-default btn-xs" disabled="disabled">
+            <% end %>
+            <%= link_to "", :class => "btn btn-default btn-xs", :rel => "acc-type", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "View more details", :disabled => "disabled" do %>
               <strong>Employed</strong>
-            </button>
+            <% end %>
           </div>
         </div>
       </div>
@@ -271,7 +287,11 @@ body {
 
       <hr class="featurette-divider">
 
-      <p class="lead">Details <button type="button" class="btn btn-primary btn-xs" rel="edit" data-container="body" data-placement="right" data-trigger="hover" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></button></p>
+      <p class="lead">Details
+        <%= link_to "", :class => "btn btn-primary btn-xs", :rel => "edit", :'data-container' => 'body', :'data-placement' => "right", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Edit" do %>
+          <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+      </p>
      
       <div class="row">
         <div class="col-md-6">
@@ -314,7 +334,11 @@ body {
 
       <hr class="featurette-divider">
 
-      <p class="lead">Skills <button type="button" class="btn btn-primary btn-xs" rel="edit" data-container="body" data-placement="right" data-trigger="hover" data-toggle="tooltip" title="Edit"><span class="glyphicon glyphicon-edit"></span></button></p>
+      <p class="lead">Skills 
+        <%= link_to "", :class => "btn btn-primary btn-xs", :rel => "edit", :'data-container' => 'body', :'data-placement' => "right", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Edit" do %>
+          <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+      </p>
 
     </div>
     <!-- Sidebar right -->
