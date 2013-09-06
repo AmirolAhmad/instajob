@@ -111,7 +111,9 @@ body {
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="#"><%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.first_name %></small></strong></a>
+          <%= link_to profile_path do %>
+          <%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.first_name %></small></strong>
+          <% end %>
         </li>
         <li>
           <%= link_to "", :rel => "dashboard", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Dashboard" do %>
@@ -124,7 +126,7 @@ body {
           <% end %>
         </li>
         <li>
-          <%= link_to accounts_settings_path, :rel => "acc-sett", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Account settings" do %>
+          <%= link_to settings_profile_path, :rel => "acc-sett", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Account settings" do %>
             <span class="glyphicon glyphicon-cog"></span>
           <% end %>
         </li>
