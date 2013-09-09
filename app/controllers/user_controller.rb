@@ -18,7 +18,7 @@ class UserController < ApplicationController
     if current_member.update_with_password(member_params)
       # Sign in the member by passing validation in case his password changed
       sign_in current_member, :bypass => true
-      redirect_to settings_profile_path
+      redirect_to settings_credential_path
     else
       render "edit"
     end
