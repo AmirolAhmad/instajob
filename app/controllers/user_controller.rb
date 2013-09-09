@@ -2,27 +2,32 @@ class UserController < ApplicationController
   before_filter :authenticate_member!
 
   def show
-  	if member_signed_in?
-  		new_user_path
-  	else 
-  		session_path(resource_name)
-  	end
+  	@member = current_member
   end
 
   def edit
-  	if member_signed_in?
-      settings_profile_path
-    else
-      session_path(resource_name)
-    end
+  	@member = current_member
   end
   
   def credential
-    if member_signed_in?
-      settings_credential_path
-    elsif 
-      session_path(resource_name)
+    @member = current_member
+  end
+
+  def update_password
+    # we can just refer to current_member since its already provided by Devise
+    if current_member.update_with_password(member_params)
+      # Sign in the member by passing validation in case his password changed
+      sign_in current_member, :bypass => true
+      redirect_to settings_credential_path
+    else
+      render "edit"
     end
+  end
+
+  private
+
+  def member_params
+    params.required(:member).permit(:password, :password_confirmation, :current_password)
   end
 
 end

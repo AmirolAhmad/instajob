@@ -21,7 +21,11 @@ Instajob::Application.routes.draw do
 
   get "welcome/index"
 
-  resources :user
+  resources :user, only: [:show] do
+    collection do
+      patch 'update_password'
+    end
+  end
   match "profile", to: "user#show", :via => 'get'
   match "settings", to: "user#edit", :via => 'get'
   match "settings/credential", to: "user#credential", :via => 'get'
