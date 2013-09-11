@@ -73,7 +73,7 @@ $(function () {
 	$('[rel=post-job]').tooltip()
 });
 
-//tooltip for post a job
+//tooltip to view all job
 $(function () {
 	$('[rel=view-all]').tooltip()
 });
