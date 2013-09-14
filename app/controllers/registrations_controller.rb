@@ -33,7 +33,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   # redirect user after update profile
   def after_update_path_for(resource)
-    settings_profile_path
+    user_path(resource)
   end
 
 end
