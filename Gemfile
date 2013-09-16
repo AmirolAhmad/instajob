@@ -22,7 +22,7 @@ gem 'devise'
 gem 'sqlite3', :group => [:development, :test]
 
 group :production do
-  gem 'thin'
+#  gem 'thin'
   gem 'pg'
   gem 'rails_12factor'
 end
@@ -73,6 +73,9 @@ gem 'newrelic_rpm'
 gem 'protected_attributes'
 
 gem 'capybara'
+
+# for Phusion Passenger
+gem 'passenger'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
