@@ -4,7 +4,6 @@ $(function () {
     $('[rel=wishlist]').tooltip();
 	$('[rel=details]').tooltip();
 	$('[rel=show-all]').tooltip();
-	$('[rel=to-top]').tooltip();
 	$('[rel=acc-sett]').tooltip();
 	$('[rel=logout]').tooltip();
 	$('[rel=notification]').tooltip();
