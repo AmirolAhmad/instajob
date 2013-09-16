@@ -8,13 +8,46 @@ body {
 }
 
 #footer-bg {
-  background: #171717 url("/style/bg-dark.jpg") 0 0 repeat;
+  border-top: 2px solid; 
+  border-top-color: #357ebd;
+  position: relative;
+  width: 100%;
+  padding-top: 20px;
+  background: #171717 0 0 repeat;
   color: #fff;
   -webkit-font-smoothing: antialiased;
 }
 
 footer {
-  padding-top: 10px;
+  padding-top: 5px;
+}
+
+.foot {
+  border-color: #357ebd;
+}
+
+.span-left {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 355px
+}
+
+.span-mid {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 355px;
+}
+
+.span-right {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 355px;
 }
 
 .center {
@@ -633,10 +666,53 @@ footer {
 <!-- Features End -->
 <!-- FOOTER -->
 <section id="footer-bg">
+  <div class="container clearfix">
+    <div class="span-left">
+      <strong><small>ADDRESS</small></strong>
+      <address>
+        <small>
+        Suite L70-02, Level 16, PJX-HM Shah Tower<br>
+        No. 16A, Persiaran Barat<br>
+        46050 Petaling Jaya<br>
+        Selangor Darul Ehsan<br>
+        <abbr title="Phone">P:</abbr> (+603) 1122 3344<br>
+        <abbr title="Fax">F:</abbr> (+603) 2233 4455 <br>
+        <abbr title="Email">E:</abbr> hello@instajob.pro
+        </small>
+      </address>
+    </div>
+    <div class="span-mid">
+      <strong><small>GET CONNECTED</small></strong>
+      <address>
+        <small>
+        Success starts with having the right people. Our team of innovators and leaders has enabled us to sustain consistent high levels of profitability.<br><br>
+        <a href="https://www.facebook.com/Instajob" target="_blank"><img src="images/facebook.png"></a> <a href="https://twitter.com/HelloInstajob" target="_blank"><img src="images/twitter.png"></a> <a href="#"><img src="images/linkedin.png"></a>
+        </small>
+      </address>
+    </div>
+    <div class="span-right">
+      <strong><small>NEWSLETTER</small></strong>
+      <address>
+        <small>
+        Subscribe and we will send you a summary once a week if new jobs are posted to this list.<br><br>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Your email address">
+          <span class="input-group-btn">
+            <button class="btn btn-default btn-primary" type="button">Subscribe</button>
+          </span>
+        </div>
+        <small>Occasional email updates, no spam</small>
+        </small>
+      </address>
+    </div>
+  </div>
+<div class="container">
+  <hr class="foot">
+</div>
   <footer>
     <div class="container">
-      <p class="pull-right"><a href="#" rel="to-top" data-placement="left" data-trigger="hover" data-toggle="tooltip" title="Back to top"><span class="glyphicon glyphicon-arrow-up"></span></a></p>
-      <p>&copy; 2013 Instajob, Inc. All right reserved. <a href="#">Blog</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a> &middot; <a href="#">Contact</a> &middot; <a href="#">API</a></p>
+      <p class="pull-right"><small><a href="#">BLOG</a> &middot; <a href="#">PRIVACY</a> &middot; <a href="#">TERMS</a> &middot; <a href="#">CONTACT</a> &middot; <a href="#">DEVELOPER</a></small></p>
+      <p>&copy; 2013 Instajob, Inc. All right reserved.</p>
     </div>
   </footer>
 </section>
