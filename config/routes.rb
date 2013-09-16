@@ -29,6 +29,7 @@ Instajob::Application.routes.draw do
   match "profile", to: "user#show", :via => 'get'
   match "settings", to: "user#edit", :via => 'get'
   match "settings/credential", to: "user#credential", :via => 'get'
+  match "terms", to: "welcome#terms", :via => 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

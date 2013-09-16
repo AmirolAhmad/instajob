@@ -1,0 +1,148 @@
+<style>
+body {
+  padding-top: 67px;
+}
+
+#footer-bg {
+  border-top: 2px solid; 
+  border-top-color: #357ebd;
+  position: relative;
+  width: 100%;
+  padding-top: 20px;
+  background: #171717 0 0 repeat;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+footer {
+  padding-top: 5px;
+}
+
+.foot {
+  border-color: #357ebd;
+}
+
+.span-left {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 355px
+}
+
+.span-mid {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 355px;
+}
+
+.span-right {
+  float: left;
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 355px;
+}
+</style>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+    <div class="navbar-header">
+    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    		<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+      	</button>
+        <%= link_to image_tag('logo.png'), root_path, :class => 'navbar-brand' %>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-btn">
+        <li><a href="#"><strong><small>ABOUT</small></strong></a></li>
+        <li><a href="#"><strong><small>PRICING</small></strong></a></li>
+        <li><a href="#"><strong><small>ENTERPRISE</small></strong></a></li>
+        <li><a href="#"><strong><small>APPLICATION</small></strong></a></li>
+      </ul>
+  	  <div class="nav navbar-btn pull-right">
+        <%= link_to "", :type => 'button', :class => 'btn btn-link navbar-btn' do %>
+          <small><strong>Contact Support</strong></small>
+        <% end %>
+        <%= link_to root_path, :type => 'button', :class => 'btn btn-link navbar-btn' do %>
+          <small><strong>Return to Instajob</strong></small>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+	<p><small>Article last updated on 13-Oct-13</small></p>
+	<p class="lead">Instajob Terms of Service</p>
+	<p>By using the Instajob.io web site ("Service"), or any services of Instajob, Inc ("Instajob"), you are agreeing to be bound by the following terms and conditions ("Terms of Service"). IF YOU ARE ENTERING INTO THIS AGREEMENT ON BEHALF OF A COMPANY OR OTHER LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE AUTHORITY TO BIND SUCH ENTITY, ITS AFFILIATES AND ALL USERS WHO ACCESS OUR SERVICES THROUGH YOUR ACCOUNT TO THESE TERMS AND CONDITIONS, IN WHICH CASE THE TERMS "YOU" OR "YOUR" SHALL REFER TO SUCH ENTITY, ITS AFFILIATES AND USERS ASSOCIATED WITH IT. IF YOU DO NOT HAVE SUCH AUTHORITY, OR IF YOU DO NOT AGREE WITH THESE TERMS AND CONDITIONS, YOU MUST NOT ACCEPT THIS AGREEMENT AND MAY NOT USE THE SERVICES.</p>
+	<p>Please note that if you are accessing any Instajob service in a government or public entity capacity, there are special terms that may apply to you. Please see Section G.17, below, for more details.</p>
+	<p>If Instajob makes material changes to these Terms, we will notify you by email or by posting a notice on our site before the changes are effective. Any new features that augment or enhance the current Service, including the release of new tools and resources, shall be subject to the Terms of Service. Continued use of the Service after any such changes shall constitute your consent to such changes. You can review the most current version of the Terms of Service at any time at: <%= link_to "http://instajob.io/terms", terms_path %></p>
+	<p>Violation of any of the terms below will result in the termination of your Account. While Instajob prohibits such conduct and Content on the Service, you understand and agree that Instajob cannot be responsible for the Content posted on the Service and you nonetheless may be exposed to such materials. You agree to use the Service at your own risk.</p>
+	<p class="lead">A. Account Terms</p>
+	<ol>
+		<li>You must be 13 years or older to use this Service.</li>
+		<li>You must be a human. Accounts registered by "bots" or other automated methods are not permitted.</li>
+		<li>You must provide your legal full name, a valid email address, and any other information requested in order to complete the signup process.</li>
+		<li>Your login may only be used by one person - a single login shared by multiple people is not permitted. You may create separate logins for as many people as your plan allows.</li>
+		<li>You are responsible for maintaining the security of your account and password. Instajob cannot and will not be liable for any loss or damage from your failure to comply with this security obligation.</li>
+		<li>You are responsible for all Content posted and activity that occurs under your account (even when Content is posted by others who have accounts under your account).</li>
+		<li>One person or legal entity may not maintain more than one free account.</li>
+		<li>You may not use the Service for any illegal or unauthorized purpose. You must not, in the use of the Service, violate any laws in your jurisdiction (including but not limited to copyright or trademark laws).</li>
+	</ol>
+</div>
+<!-- FOOTER -->
+<section id="footer-bg">
+  <div class="container clearfix">
+    <div class="span-left">
+      <strong><small>ADDRESS</small></strong>
+      <address>
+        <small>
+        Suite L70-02, Level 16, PJX-HM Shah Tower<br>
+        No. 16A, Persiaran Barat<br>
+        46050 Petaling Jaya<br>
+        Selangor Darul Ehsan<br>
+        <abbr title="Phone">P:</abbr> (+603) 1122 3344<br>
+        <abbr title="Fax">F:</abbr> (+603) 2233 4455 <br>
+        <abbr title="Email">E:</abbr> hello@instajob.pro
+        </small>
+      </address>
+    </div>
+    <div class="span-mid">
+      <strong><small>GET CONNECTED</small></strong>
+      <address>
+        <small>
+        Success starts with having the right people. Our team of innovators and leaders has enabled us to sustain consistent high levels of profitability.<br><br>
+        <a href="https://www.facebook.com/Instajob" target="_blank"><img src="images/facebook.png"></a> <a href="https://twitter.com/HelloInstajob" target="_blank"><img src="images/twitter.png"></a> <a href="#"><img src="images/linkedin.png"></a>
+        </small>
+      </address>
+    </div>
+    <div class="span-right">
+      <strong><small>NEWSLETTER</small></strong>
+      <address>
+        <small>
+        Subscribe and we will send you a summary once a week if new jobs are posted to this list.<br><br>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Your email address">
+          <span class="input-group-btn">
+            <button class="btn btn-default btn-primary" type="button">Subscribe</button>
+          </span>
+        </div>
+        <small>Occasional email updates, no spam</small>
+        </small>
+      </address>
+    </div>
+  </div>
+<div class="container">
+  <hr class="foot">
+</div>
+  <footer>
+    <div class="container">
+      <p class="pull-right"><small><a href="#">BLOG</a> &middot; <a href="#">PRIVACY</a> &middot; <%= link_to "TERMS", terms_path %> &middot; <a href="#">CONTACT</a> &middot; <a href="#">DEVELOPER</a></small></p>
+      <p><strong><small>&copy; 2013 Instajob, Inc. All right reserved.</small></strong></p>
+    </div>
+  </footer>
+</section>
