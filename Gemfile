@@ -80,6 +80,16 @@ gem 'passenger'
 # https://github.com/thoughtbot/factory_girl_rails
 gem 'factory_girl_rails'
 
+# This gem provides a simple and extremely flexible way to upload files from Ruby applications.
+# It works well with Rack based web applications, such as Ruby on Rails.
+# https://github.com/carrierwaveuploader/carrierwave
+gem 'carrierwave'
+
+# Formtastic is a Rails FormBuilder DSL (with some other goodies) to make it far easier to create beautiful,
+#semantically rich, syntactically awesome, readily stylable and wonderfully accessible HTML forms in your Rails applications.
+# https://github.com/justinfrench/formtastic/
+gem 'formtastic'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
