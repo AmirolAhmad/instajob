@@ -33,6 +33,20 @@ class Member < ActiveRecord::Base
               :minimum => 8,
               :maximum => 20
             }
+
+  # validation for first_name
+  validates :first_name,
+            :length => {
+              :minimum => 2,
+              :maximum => 30
+            }
+
+  # validation for last_name
+  validates :last_name,
+            :length => {
+              :minimum => 2,
+              :maximum => 30
+            }
             
   # password complexity          
   def password_complexity
