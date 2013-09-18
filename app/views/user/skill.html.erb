@@ -149,13 +149,13 @@ body {
             <%= link_to settings_profile_path, :class => "list-group-item" do %>
               Profile Details
             <% end %>
-            <%= link_to settings_credential_path, :class => "active list-group-item" do %>
+            <%= link_to settings_credential_path, :class => "list-group-item" do %>
               User Credential
             <% end %>
             <%= link_to settings_company_path, :class => "list-group-item" do %>
               Company Details
             <% end %>
-            <%= link_to settings_skill_path, :class => "list-group-item" do %>
+            <%= link_to settings_skill_path, :class => "active list-group-item" do %>
               Skill & Expertise
             <% end %>
             <%= link_to "", :class => "list-group-item" do %>
@@ -178,7 +178,7 @@ body {
     <div class="col-xs-12 col-md-9">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Change Password</h3>
+          <h3 class="panel-title">Skills &  Expertise</h3>
         </div>
         <div class="panel-body">
           <div class="row">
@@ -186,59 +186,149 @@ body {
             <%= form_for(@member, :url => { :action => "update_password" } ) do |f| %>
               <%= devise_error_messages! %>
               <div class="form-group">
-                <%= f.label :current_password %>
-                <%= f.password_field :current_password, :class => 'form-control', :type => 'password' %>
-                <span class="help-block">We need your current password to confirm your changes</span>
+                <%= f.label "Skills" %>
+                <%= f.text_field :current_password, :class => 'form-control', :type => 'text', :placeholder => "ex: Ruby on Rails, Python, PHP, HTML5, CSS3" %>
               </div>
+            </div>
+            <div class="col-md-3">
               <div class="form-group">
-                <%= f.label :password %>
-                <%= f.password_field :password, :autocomplete => "off", :class => 'form-control', :type => 'password' %>
+                <%= f.label "Years of experience" %>
+                <select class="form-control">
+                  <option>Less than 1 year</option>
+                  <option>2 years</option>
+                  <option>3 years</option>
+                  <option>4 years</option>
+                  <option>More than 5 years</option>
+                </select>
               </div>
+            </div>
+            <div class="col-md-3">
               <div class="form-group">
-                <%= f.label :password_confirmation %>
-                <%= f.password_field :password_confirmation, :class => 'form-control', :type => 'password' %>
+                <%= f.label "Proficiency" %>
+                <select class="form-control">
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Expert</option>
+                </select>
               </div>
-              <div class="form-group">
-                <%= f.submit "Update Password", :class => 'btn btn-primary btn-default' %>
-              </div>
-            <% end %>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Change Username</h3>
-        </div>
-        <div class="panel-body">
           <div class="row">
             <div class="col-md-6">
-              <p>Changing your username can have unintended side effects.</p>  
-	            <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-	            <%= devise_error_messages! %>
-	            <div class="form-group">
-	              <%= f.text_field :username, :class => 'form-control', :type => 'text' %>
-              </div>
+              <%= devise_error_messages! %>
               <div class="form-group">
-                <%= f.submit "Change Username", :class => 'btn btn-primary btn-default' %>
+                <%= f.text_field :current_password, :class => 'form-control', :type => 'text' %>
               </div>
-              <% end %>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <select class="form-control">
+                  <option>Less than 1 year</option>
+                  <option>2 years</option>
+                  <option>3 years</option>
+                  <option>4 years</option>
+                  <option>More than 5 years</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <select class="form-control">
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Expert</option>
+                </select>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="panel panel-danger">
-        <div class="panel-heading">
-          <h3 class="panel-title">Delete Account</h3>
-        </div>
-        <div class="panel-body">
           <div class="row">
-            <div class="col-md-12">
-              <strong>Are you sure you want to delete your account?</strong>
-              <p>Deleting your account will disable your profile and remove your name and picture from most things you've shared on Instajob.</p>
-              <%= button_to "Delete my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-danger' %>
+            <div class="col-md-6">
+              <%= devise_error_messages! %>
+              <div class="form-group">
+                <%= f.text_field :current_password, :class => 'form-control', :type => 'text' %>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <select class="form-control">
+                  <option>Less than 1 year</option>
+                  <option>2 years</option>
+                  <option>3 years</option>
+                  <option>4 years</option>
+                  <option>More than 5 years</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <select class="form-control">
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Expert</option>
+                </select>
+              </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= devise_error_messages! %>
+              <div class="form-group">
+                <%= f.text_field :current_password, :class => 'form-control', :type => 'text' %>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <select class="form-control">
+                  <option>Less than 1 year</option>
+                  <option>2 years</option>
+                  <option>3 years</option>
+                  <option>4 years</option>
+                  <option>More than 5 years</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <select class="form-control">
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Expert</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= devise_error_messages! %>
+              <div class="form-group">
+                <%= f.text_field :current_password, :class => 'form-control', :type => 'text' %>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <select class="form-control">
+                  <option>Less than 1 year</option>
+                  <option>2 years</option>
+                  <option>3 years</option>
+                  <option>4 years</option>
+                  <option>More than 5 years</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <select class="form-control">
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Expert</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.submit "Update", :class => 'btn btn-primary btn-default' %>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>

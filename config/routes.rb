@@ -1,4 +1,5 @@
 Instajob::Application.routes.draw do
+  get "post/index"
   devise_for :members,
     :controllers => {
       :registrations => "registrations"
@@ -29,7 +30,10 @@ Instajob::Application.routes.draw do
   match "profile", to: "user#show", :via => 'get'
   match "settings", to: "user#edit", :via => 'get'
   match "settings/credential", to: "user#credential", :via => 'get'
+  match "settings/company", to: "user#company", :via => 'get'
+  match "settings/skill", to: "user#skill", :via => 'get'
   match "terms", to: "welcome#terms", :via => 'get'
+  match "post", to: "post#index", :via => 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

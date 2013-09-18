@@ -1,0 +1,103 @@
+<style>
+body {
+  padding-top: 75px;
+}
+
+.navbar-nav>li>a {
+  line-height: 34px;
+  padding: 0 12px;
+}
+
+.navbar-btn>li>a {
+  line-height: 49px;
+  padding: 0 12px;
+}
+
+.search_form input[type=search] {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  width:200px;
+  min-height: 36px;
+  padding: 4px 20px 4px 8px;
+  font-size: 12px;
+  -moz-transition: all .2s linear;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+ 
+.search_form input[type=search]:focus {
+  width: 500px;
+  border-color: #51a7e8;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 0 5px rgba(81,167,232,0.5);
+  outline: none;
+}
+</style>
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+    <div class="navbar-header">
+    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    		<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+      	</button>
+        <%= link_to image_tag('logo.png'), root_path, :class => 'navbar-brand' %>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-btn">
+        <li>
+          <%= link_to "", :rel => "post-job", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Post a job" do %>
+            <span class="glyphicon glyphicon-briefcase"></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "", :rel => "notification", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Notifications" do %>
+            <span class="glyphicon glyphicon-envelope"></span> <span class="label label-danger">2</span>
+          <% end %>
+        </li>
+      </ul>
+      <div class="search_form">
+        <form role="navbar-form">
+          <div class="form-group">
+            <div class="col-lg-4">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                <input type="search" class="form-control" placeholder="Search for job, company, category or user profile">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to profile_path do %>
+          <%= image_tag @current_member.gravatar_url(:size => 35), :class => 'img-rounded' %> <strong><small><%= current_member.first_name %></small></strong>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "", :rel => "dashboard", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Dashboard" do %>
+            <span class="glyphicon glyphicon-home"></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "", :rel => "subscription", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Subscriptions" do %>
+            <span class="glyphicon glyphicon-list-alt"></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to settings_profile_path, :rel => "acc-sett", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Account settings" do %>
+            <span class="glyphicon glyphicon-cog"></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to logout_path, :rel => "logout", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Sign out" do %>
+            <span class="glyphicon glyphicon-log-out"></span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+	asdadadsads
+</div>

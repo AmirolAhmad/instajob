@@ -12,6 +12,14 @@ class UserController < ApplicationController
   def credential
     @member = current_member
   end
+  
+  def company
+    @member = current_member
+  end
+  
+  def skill
+    @member = current_member
+  end
 
   def update_password
     # we can just refer to current_member since its already provided by Devise

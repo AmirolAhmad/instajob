@@ -83,7 +83,7 @@ body {
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-btn">
         <li>
-          <%= link_to "", :rel => "post-job", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Post a job" do %>
+          <%= link_to post_path, :rel => "post-job", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Post a job" do %>
             <span class="glyphicon glyphicon-briefcase"></span>
           <% end %>
         </li>
@@ -152,14 +152,17 @@ body {
             <%= link_to settings_credential_path, :class => "list-group-item" do %>
               User Credential
             <% end %>
-            <%= link_to "", :class => "list-group-item" do %>
+            <%= link_to settings_company_path, :class => "list-group-item" do %>
               Company Details
             <% end %>
-            <%= link_to "", :class => "list-group-item" do %>
+            <%= link_to settings_skill_path, :class => "list-group-item" do %>
               Skill & Expertise
             <% end %>
             <%= link_to "", :class => "list-group-item" do %>
               My Past Project
+            <% end %>
+            <%= link_to "", :class => "list-group-item" do %>
+              My Resume
             <% end %>
             <%= link_to "", :class => "list-group-item" do %>
               Payment & Billing

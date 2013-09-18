@@ -149,10 +149,10 @@ body {
             <%= link_to settings_profile_path, :class => "list-group-item" do %>
               Profile Details
             <% end %>
-            <%= link_to settings_credential_path, :class => "active list-group-item" do %>
+            <%= link_to settings_credential_path, :class => "list-group-item" do %>
               User Credential
             <% end %>
-            <%= link_to settings_company_path, :class => "list-group-item" do %>
+            <%= link_to settings_company_path, :class => "active list-group-item" do %>
               Company Details
             <% end %>
             <%= link_to settings_skill_path, :class => "list-group-item" do %>
@@ -176,71 +176,7 @@ body {
     </div>
     <!-- Middle profile -->
     <div class="col-xs-12 col-md-9">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Change Password</h3>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-6">
-            <%= form_for(@member, :url => { :action => "update_password" } ) do |f| %>
-              <%= devise_error_messages! %>
-              <div class="form-group">
-                <%= f.label :current_password %>
-                <%= f.password_field :current_password, :class => 'form-control', :type => 'password' %>
-                <span class="help-block">We need your current password to confirm your changes</span>
-              </div>
-              <div class="form-group">
-                <%= f.label :password %>
-                <%= f.password_field :password, :autocomplete => "off", :class => 'form-control', :type => 'password' %>
-              </div>
-              <div class="form-group">
-                <%= f.label :password_confirmation %>
-                <%= f.password_field :password_confirmation, :class => 'form-control', :type => 'password' %>
-              </div>
-              <div class="form-group">
-                <%= f.submit "Update Password", :class => 'btn btn-primary btn-default' %>
-              </div>
-            <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Change Username</h3>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-6">
-              <p>Changing your username can have unintended side effects.</p>  
-	            <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-	            <%= devise_error_messages! %>
-	            <div class="form-group">
-	              <%= f.text_field :username, :class => 'form-control', :type => 'text' %>
-              </div>
-              <div class="form-group">
-                <%= f.submit "Change Username", :class => 'btn btn-primary btn-default' %>
-              </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="panel panel-danger">
-        <div class="panel-heading">
-          <h3 class="panel-title">Delete Account</h3>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-md-12">
-              <strong>Are you sure you want to delete your account?</strong>
-              <p>Deleting your account will disable your profile and remove your name and picture from most things you've shared on Instajob.</p>
-              <%= button_to "Delete my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-danger' %>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="alert alert-danger">You must have a premium account to use this features!</div>
     </div>
   </div>
 </div>
