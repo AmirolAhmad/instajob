@@ -12,7 +12,6 @@ $(function () {
 	$('[rel=acc-type]').tooltip();
 	$('[rel=star-user]').tooltip();
 	$('[rel=verify]').tooltip();
-	$('[rel=edit]').tooltip();
 	$('[rel=post-job]').tooltip();
 	$('[rel=view-all]').tooltip();
 });

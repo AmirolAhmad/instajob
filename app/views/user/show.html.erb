@@ -237,7 +237,7 @@ body {
         <div class="col-md-9">
           <h2>
             <%= current_member.first_name %> <%= current_member.last_name %>
-            <%= link_to "", :class => "btn btn-primary btn-xs", :rel => "verify", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Verified" do %>
+            <%= link_to "", :class => "btn btn-primary btn-xs", :rel => "verify", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Verified Profile" do %>
             <span class="glyphicon glyphicon-ok"></span>
             <% end %>
             <div class="btn-group">
@@ -272,12 +272,12 @@ body {
       </div>
       <form role="form">
         <div class="form-group">
-          <label>Profile Description</label>
+          <h4>Profile Description</h4>
           <p class="form-control-static">
-            <small>Born on July 4th, 1986. Very talented person in technology industry. Expertized in computer fields such as networking (server environment), programing (PHP, Ruby, Python etc), web and mobile application includiong ios and android.</small>
+            Born on July 4th, 1986. Very talented person in technology industry. Expertized in computer fields such as networking (server environment), programing (PHP, Ruby, Python etc), web and mobile application includiong ios and android.
           </p>
           <p class="form-control-static">
-            <small>Other duties may include scripting or light programming, project management for systems-related projects, supervising or training computer operators, and being the consultant for computer problems beyond the knowledge of technical support staff in our company.</small>
+            Other duties may include scripting or light programming, project management for systems-related projects, supervising or training computer operators, and being the consultant for computer problems beyond the knowledge of technical support staff in our company.
           </p>
           <p class="form-control-static">
             <blockquote>
@@ -289,46 +289,68 @@ body {
 
       <hr class="featurette-divider">
 
-      <p class="lead">Details
-        <%= link_to "", :class => "btn btn-primary btn-xs", :rel => "edit", :'data-container' => 'body', :'data-placement' => "right", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Edit" do %>
-          <span class="glyphicon glyphicon-edit"></span>
-        <% end %>
-      </p>
+      <p class="lead">Details</p>
      
       <div class="row">
         <div class="col-md-6">
           <form role="form">
             <div class="form-group">
-              <label><span class="glyphicon glyphicon-user"></span> Full Name</label>
-              <p class="form-control-static"><small><%= current_member.first_name %> <%= current_member.last_name %></small></p>
+              <h4>First Name</h4>
+              <p class="form-control-static"><%= current_member.first_name %></p>
             </div>
             <div class="form-group">
-              <label><span class="glyphicon glyphicon-calendar"></span> Date of Birth</label>
-              <p class="form-control-static"><small>July 4th, 1986</small></p>
+              <h4>Address 1</h4>
+              <p class="form-control-static">No 595 Lorong 94</p>
             </div>
             <div class="form-group">
-              <label><span class="glyphicon glyphicon-eye-open"></span> Lives In</label>
-              <p class="form-control-static"><small>Petaling Jaya, Selangor</small></p>
+              <h4>City</h4>
+              <p class="form-control-static">Sungai Petani</p>
             </div>
             <div class="form-group">
-              <label><span class="glyphicon glyphicon-globe"></span> Nationality</label>
-              <p class="form-control-static"><small>Malaysia</small></p>
+              <h4>Zip/Postal Code</h4>
+              <p class="form-control-static">08000</p>
+            </div>
+            <hr>
+            <div class="form-group">
+              <h4>Date of Birth</h4>
+              <p class="form-control-static">July 4th, 1986</p>
+            </div>
+            <div class="form-group">
+              <h4>Contact Number</h4>
+              <p class="form-control-static">+60.19515**** <button type="button" class="btn btn-link btn-xs"><abbr title="Show phone number">Click to show</abbr></button></p>
+            </div>
+            <div class="form-group">
+              <h4>Nationality</h4>
+              <p class="form-control-static">Malaysia</p>
             </div>
           </form>
         </div>
         <div class="col-md-6">
           <form role="form">
             <div class="form-group">
-              <label><span class="glyphicon glyphicon-envelope"></span> Email Address</label>
-              <p class="form-control-static"><small><%= current_member.email %></small></p>
+              <h4>Last Name</h4>
+              <p class="form-control-static"><%= current_member.last_name %></p>
             </div>
             <div class="form-group">
-              <label><span class="glyphicon glyphicon-earphone"></span> Contact Number</label>
-              <p class="form-control-static"><small>+60.19515**** </small><button type="button" class="btn btn-link btn-xs"><abbr title="Show phone number">Click to show</abbr></button></p>
+              <h4>Address 2</h4>
+              <p class="form-control-static">Taman Ria</p>
             </div>
             <div class="form-group">
-              <label><span class="glyphicon glyphicon-bell"></span> Marriage Status</label>
-              <p class="form-control-static"><small>Married</small></p>
+              <h4>State/Province</h4>
+              <p class="form-control-static">Kedah</p>
+            </div>
+            <div class="form-group">
+              <h4>Country</h4>
+              <p class="form-control-static">Malaysia</p>
+            </div>
+            <hr>
+            <div class="form-group">
+              <h4>Email Address</h4>
+              <p class="form-control-static"><%= current_member.email %></p>
+            </div>
+            <div class="form-group">
+              <h4>Marriage Status</h4>
+              <p class="form-control-static">Married</p>
             </div>
           </form>
         </div>
@@ -336,11 +358,7 @@ body {
 
       <hr class="featurette-divider">
 
-      <p class="lead">Skills 
-        <%= link_to "", :class => "btn btn-primary btn-xs", :rel => "edit", :'data-container' => 'body', :'data-placement' => "right", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Edit" do %>
-          <span class="glyphicon glyphicon-edit"></span>
-        <% end %>
-      </p>
+      <p class="lead">Skills</p>
 
     </div>
     <!-- Sidebar right -->
