@@ -2,77 +2,6 @@
 body {
   padding-top: 75px;
 }
-
-#wrapper {
-  font-size: 90%;
-}
-
-.navbar-nav>li>a {
-  line-height: 34px;
-  padding: 0 12px;
-}
-
-.navbar-btn>li>a {
-  line-height: 49px;
-  padding: 0 12px;
-}
-
-.search_form input[type=search] {
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  width:200px;
-  min-height: 36px;
-  padding: 4px 20px 4px 8px;
-  font-size: 12px;
-  -moz-transition: all .2s linear;
-  -webkit-transition: all .2s linear;
-  transition: all .2s linear;
-}
- 
-.search_form input[type=search]:focus {
-  width: 500px;
-  border-color: #51a7e8;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 0 5px rgba(81,167,232,0.5);
-  outline: none;
-}
-
-.featurette-divider {
-  margin: 20px 0; /* Space out the Bootstrap <hr> more */
-  border-top: 2px solid #fff;
-  border-top-color: #3498DB;
-}
-
-.media-object {
-  position: relative;
-  float: left;
-  margin-right: 10px;
-  margin-left: -10px;
-}
-
-.media-object {
-  width: 48px;
-  height: 48px;
-}
-
-.media-object img {
-}
-
-.list-group-item-heading {
-  margin-bottom: 5px;
-}
-
-.list-group-item-text {
-  margin-bottom: 1px;
-}
-
-.lead {
-  font-size: 16px;
-}
-
-.numbering {
-  margin-left: 10px;
-}
 </style>
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
@@ -143,6 +72,35 @@ body {
   <div class="row">
     <!-- Sidebar left -->
     <div class="col-xs-12 col-md-3">
+      <div id="wrapper">
+        <center>
+          <%= image_tag @current_member.gravatar_url(:size => 240) %>
+        </center>
+        <h3>
+          <%= current_member.first_name %> <%= current_member.last_name %>
+          <%= link_to "", :class => "btn btn-primary btn-xs", :rel => "verify", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Verified Profile" do %>
+            <span class="glyphicon glyphicon-ok"></span>
+          <% end %>
+        </h3>
+        <div class="btn-group">
+          <%= link_to "", :class => "btn btn-danger btn-xs", :'data-toggle' => "button", :rel => "star-user", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Star this user" do %>
+          <span class="glyphicon glyphicon-star"></span> Star
+          <% end %>
+          <%= link_to "", :class => "btn btn-default btn-xs", :disabled => "disabled" do %>
+            <strong>1,427</strong>
+          <% end %>
+        </div>
+        <div class="btn-group">
+          <%= link_to "", :class => "btn btn-info btn-xs", :rel => "acc-type", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "View more details" do %>
+            Account Type
+          <% end %>
+          <%= link_to "", :class => "btn btn-default btn-xs", :rel => "acc-type", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "View more details", :disabled => "disabled" do %>
+            <strong>Premium</strong>
+          <% end %>
+        </div>
+        <h4>Lead Developer at Osem Network Ent</h4>
+      </div>
+      <hr>
       <div id="wrapper">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -230,46 +188,6 @@ body {
     </div>
     <!-- Middle profile -->
     <div class="col-xs-12 col-md-9">
-      <div class="row">
-        <div class="col-md-3">
-          <%= image_tag @current_member.gravatar_url(:size => 180), :class => 'img-thumbnail' %>
-        </div>
-        <div class="col-md-9">
-          <h2>
-            <%= current_member.first_name %> <%= current_member.last_name %>
-            <%= link_to "", :class => "btn btn-primary btn-xs", :rel => "verify", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Verified Profile" do %>
-            <span class="glyphicon glyphicon-ok"></span>
-            <% end %>
-            <div class="btn-group">
-              <%= link_to "", :class => "btn btn-danger btn-xs", :'data-toggle' => "button", :rel => "star-user", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "Star this user" do %>
-              <span class="glyphicon glyphicon-star"></span> Star
-              <% end %>
-              <%= link_to "", :class => "btn btn-default btn-xs", :disabled => "disabled" do %>
-                <strong>1,427</strong>
-              <% end %>
-            </div>
-          </h2>
-          <h4>Lead Developer at Osem Network Ent</h4>
-          <h5>Petaling Jaya, Selangor</h5>
-          <h5>MALAYSIA</h5>
-          <div class="btn-group">
-            <%= link_to "", :class => "btn btn-info btn-xs", :rel => "acc-type", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "View more details" do %>
-              Account Type
-            <% end %>
-            <%= link_to "", :class => "btn btn-default btn-xs", :rel => "acc-type", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "View more details", :disabled => "disabled" do %>
-              <strong>Premium</strong>
-            <% end %>
-          </div>
-          <div class="btn-group">
-            <%= link_to "", :class => "btn btn-info btn-xs" do %>
-              Status
-            <% end %>
-            <%= link_to "", :class => "btn btn-default btn-xs", :rel => "acc-type", :'data-container' => 'body', :'data-placement' => "bottom", :'data-trigger' => "hover", :'data-toggle' => "tooltip", :title => "View more details", :disabled => "disabled" do %>
-              <strong>Employed</strong>
-            <% end %>
-          </div>
-        </div>
-      </div>
       <form role="form">
         <div class="form-group">
           <h4>Profile Description</h4>
